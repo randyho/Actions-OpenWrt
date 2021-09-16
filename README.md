@@ -1,1 +1,1 @@
-OpenWrt for x84
+OpenWrt for x86
