@@ -29,8 +29,6 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-th
 # git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
 git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/luci-theme-atmaterial
-git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme-opentopd
-git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
 
 #添加额外软件包
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
