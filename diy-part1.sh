@@ -24,12 +24,12 @@ sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds
 # git clone https://github.com/jerrykuku/luci-theme-argon.git
 # git clone https://github.com/jerrykuku/luci-app-argon-config.git
 
-#添加argon-config 使用 最新argon
+# 添加argon-config 使用 最新argon
 rm -rf package/lean/luci-theme-argon/
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
-git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/luci-theme-atmaterial
+# git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
+# git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/luci-theme-atmaterial
 
 #添加额外软件包
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
