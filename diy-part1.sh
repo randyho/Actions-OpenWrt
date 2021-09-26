@@ -40,6 +40,7 @@ git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 # popd
 
 # ssr-plus
+svn co https://github.com/fw876/helloworld/trunk/tcping package/tcping
 svn co https://github.com/fw876/helloworld/trunk/xray-core package/xray-core
 svn co https://github.com/fw876/helloworld/trunk/xray-plugin package/xray-plugin
 svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadowsocks-rust
