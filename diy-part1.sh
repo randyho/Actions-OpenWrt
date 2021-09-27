@@ -27,12 +27,12 @@ git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app
 git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 
 # ssr plus
-svn co https://github.com/fw876/helloworld/trunk/tcping package/tcping
-svn co https://github.com/fw876/helloworld/trunk/xray-core package/xray-core
-svn co https://github.com/fw876/helloworld/trunk/xray-plugin package/xray-plugin
-svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadowsocks-rust
-svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
-svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin package/v2ray-plugin
-svn co https://github.com/fw876/helloworld/trunk/v2ray-core package/v2ray-core
-svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
-svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
+# svn co https://github.com/fw876/helloworld/trunk/tcping package/tcping
+# svn co https://github.com/fw876/helloworld/trunk/xray-core package/xray-core
+# svn co https://github.com/fw876/helloworld/trunk/xray-plugin package/xray-plugin
+# svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadowsocks-rust
+# svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
+# svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin package/v2ray-plugin
+# svn co https://github.com/fw876/helloworld/trunk/v2ray-core package/v2ray-core
+# svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+# svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
