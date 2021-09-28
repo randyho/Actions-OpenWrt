@@ -19,6 +19,12 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 # 修改 argon 为默认主题,不再集成luci-theme-bootstrap主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
+# 添加网口
+sed -i '$i uci set network.lan.ifname="eth0 eth2 eth3"' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci set network.wan.ifname="eth1"' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci set network.wan.proto=dhcp' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
+
 # 修正连接数（by ベ七秒鱼ベ）
 # sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=165535' package/base-files/files/etc/sysctl.conf
 
