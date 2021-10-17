@@ -23,8 +23,8 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-th
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 添加额外软件包
-git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
-git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
+git clone -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+# git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 
 # ssr plus
 # svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
@@ -46,27 +46,5 @@ git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 # svn co https://github.com/project-openwrt/openwrt/trunk/package/lean/tcpping package/lean/tcpping
 # svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/lean/naiveproxy
 
-# PASSWALL
-# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/new/luci-app-passwall
-# sed -i 's,default n,default y,g' package/new/luci-app-passwall/Makefile
-# sed -i '/V2ray:v2ray/d' package/new/luci-app-passwall/Makefile
-# sed -i '/https_dns_proxy:https-dns-proxy/d' package/new/luci-app-passwall/Makefile
-# cp -f ../PATCH/new/script/move_2_services.sh ./package/new/luci-app-passwall/move_2_services.sh
-# pushd package/new/luci-app-passwall
-# bash move_2_services.sh
-# popd
-# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/new/tcping
-# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/new/trojan-go
-# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/new/brook
-# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/new/trojan-plus
-# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/new/ssocks
-# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray package/new/xray
-# sed -i 's,default n,default y,g' package/new/xray/Makefile
-# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray package/new/v2ray
-# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-plugin package/new/v2ray-plugi
-
-# AutoCore
-# svn co https://github.com/project-openwrt/openwrt/branches/master/package/lean/autocore package/lean/autocore
-# svn co https://github.com/project-openwrt/packages/trunk/utils/coremark feeds/packages/utils/coremark
-# ln -sf ../../../feeds/packages/utils/coremark ./package/feeds/packages/coremark
-# sed -i 's,default n,default y,g' feeds/packages/utils/coremark/Makefile
+#passwall-package 
+# git clone https://github.com/xiaorouji/openwrt-passwall.git  package/passwall
