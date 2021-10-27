@@ -17,7 +17,7 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 添加网口
-# sed -i '$i uci set network.lan.ifname="eth0 eth2 eth3"' package/default-settings/files/zzz-default-settings
-# sed -i '$i uci set network.wan.ifname="eth1"' package/default-settings/files/zzz-default-settings
-# sed -i '$i uci set network.wan.proto=dhcp' package/default-settings/files/zzz-default-settings
-# sed -i '$i uci commit network' package/default-settings/files/zzz-default-settings
+# sed -i '$i uci set network.lan.ifname="eth0 eth2 eth3"' package/*/*/my-default-settings/files/uci.defaults
+# sed -i '$i uci set network.wan.ifname="eth1"' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci set network.wan.proto=dhcp' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
