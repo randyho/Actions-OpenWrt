@@ -21,3 +21,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 # sed -i '$i uci set network.wan.ifname="eth1"' package/lean/default-settings/files/zzz-default-settings
 # sed -i '$i uci set network.wan.proto=dhcp' package/lean/default-settings/files/zzz-default-settings
 # sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
+
+# 默认开启 Irqbalance
+sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
