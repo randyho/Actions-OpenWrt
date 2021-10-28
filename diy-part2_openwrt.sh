@@ -25,3 +25,6 @@ sed -i 's/eth0/eth0 eth2 eth3/g' package/base-files/files/etc/board.d/99-default
 
 # 默认开启 Irqbalance
 sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
+
+# 添加默认密码
+# sed -i "s/root::/root:'$1$CUZfPWNP$jl8w3/uwU/qtjjBfa.urF/':/g" package/base-files/files/etc/shadow
