@@ -23,5 +23,5 @@ git clone -b master https://github.com/jerrykuku/luci-theme-argon package/luci-t
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 添加额外软件包
-git clone -b dev https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+git clone -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 # git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
