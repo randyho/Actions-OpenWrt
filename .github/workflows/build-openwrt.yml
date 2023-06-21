@@ -32,7 +32,6 @@ on:
   watch:
     types: started
 
-    
 env:
   # REPO means the OpenWrt repo you want to build from in this workflow. 
   # You can modify the REPO_NAME to any name you want, but remember not to let it 
@@ -105,8 +104,8 @@ jobs:
     if: needs.check.outputs.cache-hit != 'true' || github.event.inputs.force-build == 'true'
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@main
+      - name: Checkout
+        uses: actions/checkout@main
 
       - name: Initialization environment
         env:
