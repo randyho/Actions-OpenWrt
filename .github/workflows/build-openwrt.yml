@@ -79,9 +79,9 @@ jobs:
 
       - name: Run custom-script-1
         run: |
-          chmod +x $CUSTOM_SCRIPT_2
+          chmod +x $CUSTOM_SCRIPT_1
           cd openwrt/
-          $GITHUB_WORKSPACE/$CUSTOM_SCRIPT_2
+          $GITHUB_WORKSPACE/$CUSTOM_SCRIPT_1
 
       - name: Update feeds
         run: cd openwrt/ && ./scripts/feeds update -a
