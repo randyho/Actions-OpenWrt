@@ -38,7 +38,7 @@ env:
   CONFIG_FILE: x86_64_openwrt.config
   CUSTOM_SCRIPT_1: diy-part1_openwrt.sh
   CUSTOM_SCRIPT_2: diy-part2_openwrt.sh
-  STORE_PRODUCTS: false
+  STORE_PRODUCTS: true
   STORE_FIRMWARE: true
   RELEASE_FIRMWARE: true
   TIME_ZONE: Asia/Shanghai
