@@ -101,7 +101,7 @@ jobs:
           cd openwrt/package/base-files/files
           mkdir -p etc/openclash/core
           # for updates, go to: https://github.com/MetaCubeX/mihomo/releases
-          wget -qO- https://github.com/MetaCubeX/mihomo/releases/download/v1.18.1/mihomo-linux-amd64-compatible-v1.18.1.gz | gunzip -c > etc/openclash/core/clash_meta
+          curl -sL $(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep browser_download_url | cut -d\" -f4 | egrep 'linux-amd64-compatible-v.*') | gunzip -c > etc/openclash/core/clash_meta
           # for updates, go to: https://github.com/vernesong/OpenClash
           wget -qO- https://github.com/vernesong/OpenClash/raw/core/master/premium/clash-linux-amd64-2023.08.17-13-gdcc8d87.gz | gunzip -c > etc/openclash/core/clash_tun
           chmod +x etc/openclash/core/clash*
