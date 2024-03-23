@@ -116,7 +116,7 @@ jobs:
           cd openwrt/package
           echo "packages dir:"
           ls -l
-          cd openwrt/package/luci-app-openclash/files
+          cd openwrt/package/luci-app-openclash/luci-app-openclash/files
           mkdir -p etc/openclash/core
           # for updates, go to: https://github.com/MetaCubeX/mihomo/releases
           curl -sL $(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep browser_download_url | cut -d\" -f4 | egrep 'linux-amd64-compatible-v.*') | gunzip -c > etc/openclash/core/clash_meta
