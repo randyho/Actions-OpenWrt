@@ -114,9 +114,9 @@ jobs:
       - name: Install Clash Binaries
         run: |
           cd openwrt/package
-          echo "packages dir:"
-          ls -l
           cd luci-app-openclash/luci-app-openclash/root
+          echo "openclash dir:"
+          ls -l
           mkdir -p etc/openclash/core
           # for updates, go to: https://github.com/MetaCubeX/mihomo/releases
           curl -sL $(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep browser_download_url | cut -d\" -f4 | egrep 'linux-amd64-compatible-v.*') | gunzip -c > etc/openclash/core/clash_meta
