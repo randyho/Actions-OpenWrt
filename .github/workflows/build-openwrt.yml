@@ -111,6 +111,16 @@ jobs:
           cd openwrt/
           $GITHUB_WORKSPACE/$CUSTOM_SCRIPT_2
 
+      # - name: Load custom configuration
+      #   run: |
+      #     echo "Apply app_config.sh"
+      #     cd openwrt
+      #     if [ -f "../app_config.sh" ]; then
+      #     (
+      #       /bin/bash "../app_config.sh" ${{matrix.target}}
+      #     )
+      #     fi
+
       # - name: Install Clash Binaries
       #   run: |
       #     cd openwrt/
@@ -186,7 +196,7 @@ jobs:
 
       - name: Upload firmware to release
         uses: softprops/action-gh-release@master
-        if: steps.tag.outputs.status == 'success' && !cancelled()
+        if: steps.tag.outputs.status == 'success' && !cancelled() && steps.compile.outputs.status == 'success'
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
@@ -203,8 +213,8 @@ jobs:
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@main
         with:
-          retain_days: 1
-          keep_minimum_runs: 1
+          retain_days: 3
+          keep_minimum_runs: 3
 
       - name: Remove old Releases
         uses: dev-drprasad/delete-older-releases@master
