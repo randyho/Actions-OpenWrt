@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# https://github.com/alecthw/openwrt-actions
+
 uci set luci.main.lang=zh_cn
 uci commit luci
 
@@ -9,11 +11,38 @@ uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
 uci commit system
 
+# cumtos ntp
+uci delete system.ntp.server
+uci add_list system.ntp.server='ntp.aliyun.com'
+uci add_list system.ntp.server='time1.cloud.tencent.com'
+uci add_list system.ntp.server='time.ustc.edu.cn'
+uci add_list system.ntp.server='cn.pool.ntp.org'
+# uci set system.ntp.enable_server='1'
+uci commit system
+
+# set default theme
+# uci set luci.main.mediaurlbase=/luci-static/argon
+# uci set luci.main.mediaurlbase=/luci-static/design
+# uci set luci.main.mediaurlbase=/luci-static/material
+# uci commit luci
+
+# detect network version
+new_net=true
+if [ -n "$(uci -q get network.lan.type)" ]; then
+    new_net=false
+fi
+
+# network
+# uci delete network.globals.ula_prefix
+# uci delete network.wan
+uci delete network.wan6
+
 # sed -i 's/downloads.openwrt.org/openwrt.proxy.ustclug.org/g' /etc/opkg/distfeeds.conf
 # sed -i 's/http:/https:/g' /etc/opkg/distfeeds.conf
 # sed -i "s/# //g" /etc/opkg/distfeeds.conf
 
 # 设置默认管理IP地址
+uci delete network.lan.ip6assign
 uci set network.lan.ipaddr='192.168.2.1'
 uci set network.lan.netmask='255.255.255.0'
 uci set network.lan.delegate='0'
