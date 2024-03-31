@@ -1,27 +1,32 @@
-# This script will be executed on first startup.
+#!/bin/sh
+
+uci set luci.main.lang=zh_cn
+uci commit luci
+
+# 固件名称
+uci set system.@system[0].hostname=R7800
+uci set system.@system[0].timezone=CST-8
+uci set system.@system[0].zonename=Asia/Shanghai
+uci commit system
+
+# sed -i 's/downloads.openwrt.org/openwrt.proxy.ustclug.org/g' /etc/opkg/distfeeds.conf
+# sed -i 's/http:/https:/g' /etc/opkg/distfeeds.conf
+# sed -i "s/# //g" /etc/opkg/distfeeds.conf
+
+# 设置默认管理IP地址
+uci set network.lan.ipaddr='192.168.2.1'
+uci set network.lan.netmask='255.255.255.0'
+uci set network.lan.delegate='0'
+uci set network.wan.delegate='0'
+uci commit network
+
+# 设置root密码
+sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+
 #
 # Uncomment lines to apply Configure PPPoE:
 # pppoe_username=""
 # pppoe_password=""
-
-# Configure password
-root_password="password"
-
-# Configure LAN
-lan_ip_address="192.168.2.1"
-
-if [ -n "$root_password" ]; then
-  (
-    echo "$root_password"
-    sleep 1
-    echo "$root_password"
-  ) | passwd >/dev/null
-fi
-
-if [ -n "$lan_ip_address" ]; then
-  uci set network.lan.ipaddr="$lan_ip_address"
-  uci commit network
-fi
 
 if [ -n "$pppoe_username" -a "$pppoe_password" ]; then
   uci set network.wan.proto=pppoe
