@@ -6,7 +6,7 @@ uci set luci.main.lang=zh_cn
 uci commit luci
 
 # 固件名称
-uci set system.@system[0].hostname=R7800
+uci set system.@system[0].hostname=OpenWrt
 uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
 uci commit system
@@ -50,7 +50,7 @@ uci set network.wan.delegate='0'
 uci commit network
 
 # 设置root密码
-sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+# sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 
 #
 # Uncomment lines to apply Configure PPPoE:
