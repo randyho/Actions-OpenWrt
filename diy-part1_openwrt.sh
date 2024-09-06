@@ -25,6 +25,7 @@ git clone --depth 1 -b master https://github.com/jerrykuku/luci-theme-argon pack
 git clone --depth 1 -b master https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 添加额外软件包
+git clone --depth 1 -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 git clone --depth 1 -b main https://github.com/morytyann/OpenWrt-mihomo.git package/OpenWrt-mihomo
 # git clone --depth 1 https://github.com/randyho/luci-app-clash-lite.git package/luci-app-clash-lite
 # git clone --depth 1 https://github.com/randyho/luci-app-openclash.git package/luci-app-openclash
