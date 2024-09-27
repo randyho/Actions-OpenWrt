@@ -31,8 +31,8 @@ git clone --depth 1 -b main https://github.com/morytyann/OpenWrt-mihomo.git pack
 # git clone --depth 1 https://github.com/randyho/luci-app-openclash.git package/luci-app-openclash
 # git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+rm -rf package/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x package/lang/golang
 
 # remove v2ray-geodata package from feeds (openwrt-22.03 & master)
 rm -rf feeds/packages/net/v2ray-geodata
